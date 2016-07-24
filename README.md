@@ -2,6 +2,8 @@
 
 Stream of social network stats. 
 
+[![Build Status](https://travis-ci.org/karmadude/influencer.svg?branch=master)](https://travis-ci.org/karmadude/influencer)
+
 ## Install
 
     $ npm install influencer
