@@ -1,0 +1,19 @@
+{
+  "name": "influencer",
+  "version": "1.0.0",
+  "description": "Stream of social network stats",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape tests/test-*.js"
+  },
+  "author": "Liji Jinaraj <karmadude@gmail.com> (http://liji.jinaraj.com)",
+  "license": "MIT",
+  "dependencies": {
+    "jsdom": "^9.4.1",
+    "request": "^2.72.0",
+    "through2": "^2.0.1"
+  },
+  "devDependencies": {
+    "tape": "^4.6.0"
+  }
+}
