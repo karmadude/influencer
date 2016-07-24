@@ -1,10 +1,14 @@
 {
   "name": "influencer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Stream of social network stats",
   "main": "index.js",
   "scripts": {
     "test": "tape tests/test-*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/karmadude/influencer.git"
   },
   "author": "Liji Jinaraj <karmadude@gmail.com> (http://liji.jinaraj.com)",
   "license": "MIT",
