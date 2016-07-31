@@ -19,6 +19,26 @@ function exampleInfluencer() {
   influencer.push(null);
 }
 
+function exampleDribbbleInfluence() {
+  const stream = require("stream");
+  const through2 = require("through2");
+  const Influencer = require("../index");
+
+  let tr = through2.obj(function(user, enc, next) {
+      console.log("DribbbleInfluence: ", user);
+      next(null, user);
+  });
+
+  let usernames = ["yoga", "SA9527"];
+  let usernameStream = new stream.Readable({ objectMode: true });
+  usernameStream._read = function() {
+    this.push(usernames.shift() || null)
+  };
+  
+  let influence = new Influencer.influences.DribbbleInfluence();
+  usernameStream.pipe(influence).pipe(tr);
+}
+
 function exampleTwitterInfluence() {
   const stream = require("stream");
   const through2 = require("through2");
@@ -60,5 +80,6 @@ function exampleInstagramInfluence() {
 }
 
 exampleInfluencer();
+exampleDribbbleInfluence();
 exampleTwitterInfluence();
 exampleInstagramInfluence();
