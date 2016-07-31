@@ -1,6 +1,6 @@
 {
   "name": "influencer",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Stream of social network stats",
   "main": "index.js",
   "scripts": {
