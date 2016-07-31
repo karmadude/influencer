@@ -33,6 +33,28 @@ influencer.push({ username: "vicenews", source: Influencer.influences.InstagramI
 influencer.push(null);
 ```
 
+### Influencer.influences.DribbbleInfluence
+
+```js
+const stream = require("stream");
+const through2 = require("through2");
+const Influencer = require("influencer");
+
+let tr = through2.obj(function(user, enc, next) {
+    console.log("DribbbleInfluence: ", user);
+    next(null, user);
+});
+
+let usernames = ["yoga", "SA9527"];
+let usernameStream = new stream.Readable({ objectMode: true });
+usernameStream._read = function() {
+  this.push(usernames.shift() || null)
+};
+
+let influence = new Influencer.influences.DribbbleInfluence();
+usernameStream.pipe(influence).pipe(tr);
+```
+
 ### Influencer.influences.TwitterInfluence
 
 ```js
